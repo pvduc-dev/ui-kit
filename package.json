@@ -1,0 +1,25 @@
+{
+  "name": "root",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pvduc-dev/ui-kit"
+  },
+  "browserslist": [
+    "chrome >= 61",
+    "firefox >= 60",
+    "safari >= 11",
+    "edge >= 16"
+  ],
+  "scripts": {
+    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "workspaces": [
+    "packages/**"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "typescript": "^4.2.4"
+  }
+}
