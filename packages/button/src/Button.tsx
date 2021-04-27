@@ -10,22 +10,15 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-import React, {FC, RefObject, useRef} from 'react';
-import {AriaButtonProps} from "@react-types/button";
-import {useButton} from "@react-aria/button";
+import React, { FC, RefObject, useRef } from 'react';
+import { AriaButtonProps } from '@react-types/button';
+import { useButton } from '@react-aria/button';
 
 interface ButtonProps extends AriaButtonProps {}
-
-const Button: FC = ({children, ...props}: ButtonProps) => {
-  const ref = useRef() as RefObject<HTMLButtonElement>
-  const buttonProps = useButton(props, ref)
-  return (
-    <button
-      {...buttonProps}
-    >
-      {children}
-    </button>
-  );
+const Button: FC = ({ children, ...props }: ButtonProps) => {
+  const ref = useRef() as RefObject<HTMLButtonElement>;
+  const buttonProps = useButton(props, ref);
+  return <button {...buttonProps}>{children}</button>;
 };
 
 export default Button;
